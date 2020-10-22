@@ -14,23 +14,122 @@ body {
   height: 100vh;
   background-size: cover;
   color: #000000;
+  background-color: #222;
 }
 
 .time {
   font-size: 8rem;
+  font-family: Codenamecoderfree4f-momentum, sans-serif;
+  font-weight: bolder;
+  -webkit-text-stroke: .02em gold;
+//  background-color: #666666;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(255,255,255,0.75) 0px 3px 3px;
+
+
+  z-index: 1;
+  position: relative;
 }
 
 h1 {
   margin-bottom: 3rem;
+  z-index: 1;
+  -webkit-text-stroke: .002em gold;
+  
 }
 
 h2 {
   margin-bottom: 0.5rem;
   opacity: 0.8;
+  z-index: 1;
+  -webkit-text-stroke: .002em gold;
 }
 
 @media (max-width: 700px) {
   .time {
     font-size: 6rem;
   }
+}
+
+@font-face {
+  font-family: raleway-momentum;
+  src: url(assets/fonts/RalewayRegular.woff) format("woff");
+}
+
+@font-face {
+  font-family: raleway-momentum;
+  src: url(../fonts/RalewayBold.woff) format("woff");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: raleway-momenum;
+  src: url(../fonts/RalewayRxtraBold.woff) format("woff");
+  font-weight: 800;  
+}
+
+@font-face {
+  font-family: Codenamecoderfree4f-momentum;
+  src: url(assets/fonts/Codenamecoderfree4fbold.woff) format("woff");
+}
+
+
+@font-face {
+  font-family: MonumentGrotesk-momentum;
+  src: url(assets/fonts/MonumentGrotesk-Mono.woff) format("woff");
+}
+
+
+  .backfilm{
+    z-index: -1;
+    position: absolution;
+  }
+
+  .grid {
+    display: grid;
+  }
+  .main-header {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center; 
+    position: relative;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+  }
+
+  .header-content {
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  .header-content h1 {
+    font-size: 60px;
+    font-family: intro-grid, sans-serif;
+    font-weight: 400;
+    margin: 20px 0;
+    line-height: 1.5;
+  }
+ 
+  #bg {
+    position:fixed;
+    top:-50%;
+    left:-50%;
+    width:200%;
+    height:200%;
+    z-index: -1;
+}
+#bg img {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    min-width:50%;
+    min-height:50%;
 }
