@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,14 +21,29 @@ body {
   font-size: 8rem;
   font-family: Codenamecoderfree4f-momentum, sans-serif;
   font-weight: bolder;
-  -webkit-text-stroke: .02em gold;
-//  background-color: #666666;
+  -webkit-text-stroke: 0.02em gold;
+  //  background-color: #666666;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: rgba(255,255,255,0.75) 0px 3px 3px;
+  text-shadow: rgba(255, 255, 255, 0.75) 0px 0px 0px;
 
+  z-index: 1;
+  position: relative;
+}
+
+.dateday {
+  font-size: 4rem;
+  font-family: raleway-momentum, sans-serif;
+  font-weight: bolder;
+  -webkit-text-stroke: 0.02em gold;
+  //  background-color: #666666;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(255, 255, 255, 0.75) 0px 0px 0px;
 
   z-index: 1;
   position: relative;
@@ -37,15 +52,14 @@ body {
 h1 {
   margin-bottom: 3rem;
   z-index: 1;
-  -webkit-text-stroke: .002em gold;
-  
+  -webkit-text-stroke: 0.002em gold;
 }
 
 h2 {
   margin-bottom: 0.5rem;
   opacity: 0.8;
   z-index: 1;
-  -webkit-text-stroke: .002em gold;
+  -webkit-text-stroke: 0.002em gold;
 }
 
 @media (max-width: 700px) {
@@ -68,7 +82,7 @@ h2 {
 @font-face {
   font-family: raleway-momenum;
   src: url(../fonts/RalewayRxtraBold.woff) format("woff");
-  font-weight: 800;  
+  font-weight: 800;
 }
 
 @font-face {
@@ -76,60 +90,88 @@ h2 {
   src: url(assets/fonts/Codenamecoderfree4fbold.woff) format("woff");
 }
 
-
 @font-face {
   font-family: MonumentGrotesk-momentum;
   src: url(assets/fonts/MonumentGrotesk-Mono.woff) format("woff");
 }
 
+.backfilm {
+  z-index: -1;
+  position: absolution;
+}
 
-  .backfilm{
-    z-index: -1;
-    position: absolution;
-  }
+.grid {
+  display: grid;
+}
+.main-header {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
 
-  .grid {
-    display: grid;
-  }
-  .main-header {
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center; 
-    position: relative;
-    -webkit-align-content: center;
-    -ms-flex-line-pack: center;
-    align-content: center;
-  }
+.header-content {
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+.header-content h1 {
+  font-size: 60px;
+  font-family: intro-grid, sans-serif;
+  font-weight: 400;
+  margin: 20px 0;
+  line-height: 1.5;
+}
 
-  .header-content {
-    z-index: 1;
-    color: #fff;
-    text-align: center;
-    padding: 60px 20px;
-  }
-  .header-content h1 {
-    font-size: 60px;
-    font-family: intro-grid, sans-serif;
-    font-weight: 400;
-    margin: 20px 0;
-    line-height: 1.5;
-  }
- 
-  #bg {
-    position:fixed;
-    top:-50%;
-    left:-50%;
-    width:200%;
-    height:200%;
-    z-index: -1;
+.bgimg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -1;
+
+}
+
+#bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -1;
+
 }
 #bg img {
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    margin:auto;
-    min-width:50%;
-    min-height:50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+}
+
+.slow-show {
+  opacity: 0; /*Элемент полностью прозрачный (невидимый)*/
+  transition: 1s; /*Скорость перехода состояния элемента*/
+  animation: show 3s 1; /* Указываем название анимации, её время и количество повторов*/
+  animation-fill-mode: forwards; /* Чтобы элемент оставался в конечном состоянии анимации */
+  animation-delay: 1s; /* Задержка перед началом */
+
+}
+
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

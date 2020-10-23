@@ -10,15 +10,17 @@
 </head>
 
 <body>
-  <div id="bg">
-    <img src="assets/images/morning/03.jpg" alt="">
-</div>
+
+  <bgimg id="bg" class="bgimg slow-show">
+    <img id="landscape-bg" src="assets/images/morning/03.jpg" alt="">
+</bgimg>
 
   <header class="main-header  grid" >
 
     <div class="header-content grid">
 
-      <time class="time"></time>
+      <time class="time">0000</time>
+      <dateday class="dateday">11111</dateday>
       <h1>
         <span class="greeting"></span>
         <span class="name" contenteditable="true">[Enter Name]</span>
@@ -26,8 +28,9 @@
       <h2>What Is Your Focus For Today?</h2>
       <h2 class="focus" contenteditable="true">[Enter Focus]</h2>
 
-
     </div>
+
+    <button type="button" class="btn btn-hover-red" id="ce">ce</button>
 
   </header>
 
