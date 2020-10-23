@@ -1,7 +1,7 @@
 if (typeof localStorage.focusField === "undefined")
-  localStorage.setItem("focusField", null);
+  localStorage.setItem("focusField", "Введите свою цель");
 if (typeof localStorage.nameField === "undefined")
-  localStorage.setItem("nameField", null);
+  localStorage.setItem("nameField", "Введите свое имя");
 
 const time = document.querySelector(".time"),
   nameField = document.querySelector(".nameField"),
@@ -65,10 +65,10 @@ function showGreeting() {
   
   // четыре времени суток: утро 6:00-12:00, день 12:00-18:00, вечер 18:00-24:00, ночь 24:00-6:00.
   
-                           if ( 0 <= parseInt(hour, 10) && parseInt(hour, 10) < 6 ) greetingField.innerHTML = 'ночь';
-                      else if ( 6 <= parseInt(hour, 10) && parseInt(hour, 10) < 12 ) greetingField.innerHTML = 'утро';
-                      else if ( 12 <= parseInt(hour, 10) && parseInt(hour, 10) < 18 ) greetingField.innerHTML = 'день';
-                      else if ( 18 <= parseInt(hour, 10) && parseInt(hour, 10) < 24 ) greetingField.innerHTML = 'вечер';
+                           if ( 0 <= parseInt(hour, 10) && parseInt(hour, 10) < 6 ) greetingField.innerHTML = 'Добрая ночь, ';
+                      else if ( 6 <= parseInt(hour, 10) && parseInt(hour, 10) < 12 ) greetingField.innerHTML = 'Доброе утро, ';
+                      else if ( 12 <= parseInt(hour, 10) && parseInt(hour, 10) < 18 ) greetingField.innerHTML = 'Добрый день, ';
+                      else if ( 18 <= parseInt(hour, 10) && parseInt(hour, 10) < 24 ) greetingField.innerHTML = 'Добрый вечер, ';
   
     setTimeout(showTime, 1000);
   }
@@ -108,20 +108,31 @@ let nameFromStorage = localStorage.getItem("nameField");
 if (nameFromStorage !== null || nameFromStorage.length === 0)
         nameField.innerHTML = nameFromStorage;
 else nameField.innerHTML = "Введите свое имя";
+
+function onclickText(e) {
+
+    nameField.innerHTML = '';
+
+  }
+
 // обработчик изменения текста
 function onchangeText(e) {
-  localStorage.setItem("nameField", e.target.innerText);
+
+    if( e.target.innerText.length !== 0 ) localStorage.setItem("nameField", e.target.innerText);
 }
 // обработка потери фокуса
 function onblurText(e) {
-  localStorage.setItem("nameField", e.target.innerText);
-  nameField.innerHTML = e.target.textContent;
+    if( e.target.innerText.length !== 0 ) 
+    { localStorage.setItem("nameField", e.target.innerText);
+        nameField.innerHTML = e.target.textContent;
+}   
 }
 // получение фокуса
 function onfocusText(e) {
   //
 }
 
+nameField.addEventListener("click", onclickText);
 nameField.addEventListener("change", onchangeText);
 nameField.addEventListener("blur", onblurText);
 nameField.addEventListener("focus", onfocusText);
